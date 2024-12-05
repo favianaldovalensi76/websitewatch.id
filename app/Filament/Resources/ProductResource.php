@@ -34,6 +34,10 @@ class ProductResource extends Resource
                     ->directory('products/images')
                     ->image()
                     ->label('Image'),
+                Forms\Components\TextInput::make('price')
+                ->required()
+                ->numeric()
+                ->prefix('IDR'),
             ]);
     }
 
@@ -53,6 +57,7 @@ class ProductResource extends Resource
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->sortable(),
+                TextColumn::make('price'),
             ])
             ->filters([])
             ->actions([

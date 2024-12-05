@@ -9,14 +9,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-orange-800 text-white">
+<body class="bg-orange-900 text-white">
   <!-- HEADER -->
   <header>
     <nav class="bg-white py-4">
       <div class="container mx-auto flex items-center justify-between px-6">
-        <a href="#" class="flex items-center">
-          <img class="h-10" src="img/Logo.png" alt="Logo" />
-        </a>
+         <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img class="h-10" src="img/Logo.png" alt="Logo" />
+      </a>
         <button class="block lg:hidden text-gray-700 focus:outline-none">
           <i class="fas fa-bars"></i>
         </button>
@@ -34,11 +35,11 @@
     <div class="container mx-auto px-6 py-12">
       <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
         <div class="text-center lg:text-left lg:w-1/2">
-          <h1 class="text-4xl font-bold text-gray-200 mb-4">
-            PRODUK KAMI MENAWARKAN <span class="text-orange-600">KUALITAS</span> YANG <br />
+          <h1 class="text-4xl font-bold text-white-200 mb-4">
+            PRODUK KAMI MENAWARKAN <span class="text-red-600">KUALITAS</span> YANG <br />
             LEBIH BAIK
           </h1>
-          <p class="text-lg text-gray-400 mb-6">
+          <p class="text-lg text-white-400 mb-6">
             Jam tangan elegan XYZ adalah perpaduan sempurna antara gaya dan fungsionalitas. Dirancang untuk pria dan wanita modern, jam ini menampilkan
           </p>
         </div>
@@ -56,7 +57,7 @@
       <div class="text-center max-w-lg mx-auto mb-10">
         <p class="text-gray-600 text-sm uppercase tracking-wider">MENGAPA MEMILIH KAMI</p>
         <h1 class="text-3xl font-bold text-gray-900 mb-3">
-          JAM TANGAN DENGAN <span class="text-orange-600">FITUR MENARIK</span>
+          JAM TANGAN DENGAN <span class="text-orange-700">FITUR MENARIK</span>
         </h1>
         <p class="text-gray-700">FITUR MENARIK PADA JAM TANGAN KAMI</p>
       </div>
@@ -143,7 +144,7 @@
       <div class="text-center max-w-lg mx-auto mb-10">
         <p class="text-gray-600 text-sm uppercase tracking-wider mb-2">Detail Lainnya</p>
         <h1 class="text-3xl font-bold text-gray-900 mb-3">
-          Spesifikasi<span class="text-orange-600"> Lainnya</span>
+          Spesifikasi<span class="text-orange-00"> Lainnya</span>
         </h1>
         <p class="text-gray-700">Spesifikasi lain tentang Jam tangan kami</p>
       </div>
@@ -262,7 +263,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <h3 class="text-lg font-semibold text-gray-900">Diaz Nawfal</h3>
-              <p class="text-gray-600">Raja Desain dan Coding</p>
+              <p class="text-gray-600">Programmer</p>
             </div>
           </div>
           <span class="absolute top-4 left-4 text-gray-300 text-2xl">
@@ -301,217 +302,242 @@
   </div>
   <!-- END TESTIMONIALS -->
 
-  <!-- PRICE -->
-  <div id="pricing" class="block-17 px-4 py-8">
-    <div class="container mx-auto">
-      <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-4xl font-bold mb-3">Harga</h1>
-        <p class="text-gray-600"></p>
+<!-- PRICE -->
+<div id="pricing" class="block-17 px-4 py-8">
+  <div class="container mx-auto">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-3">List Product</h1>
+      <p class="text-white-600">Daftar produk unggulan kami</p>
+    </div>
+
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+        @foreach ($products as $product)
+      <!-- Produk 1 -->
+      <div class="p-6 border rounded-lg shadow-lg bg-white text-center">
+        <img class="w-24 h-24 mx-auto mb-4" src="{{ asset('storage/' . $product->image ) }}" alt="Produk 1" />
+        <h2 class="text-xl font-bold mb-2">{{ $product->name }}</h2>
+        <p class="text-gray-700 mb-4">{{ $product->content }}</p>
+        <p class="text-2xl font-bold text-orange-600 mb-4">{{ $product->price }}</p>
       </div>
-      <div class="flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0 lg:space-x-6 mt-8">
-        <div class="text-center lg:w-1/2 flex items-center justify-center p-6 border rounded-lg shadow-lg bg-white">
-          <div>
-            <img class="w-24 h-24 rounded-full mx-auto mb-4" src="img/img-1.png" />
-            <p class="text-gray-700 mb-4">
-              Jam tangan elegan XYZ menggabungkan gaya dan fungsi. Dengan desain minimalis dan bahan stainless steel tahan
-              karat, jam ini cocok untuk setiap kesempatan
-            </p>
-            <div class="text-center">
-              <span class="block font-semibold text-lg">XYZ Watch</span>
-              <span class="block text-gray-500 my-1">XYZ Watch.com</span>
-              <span class="text-yellow-500">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </span>
-            </div>
-          </div>
-          <span class="text-gray-400 text-3xl absolute top-4 left-4"><i class="fas fa-quote-left"></i></span>
-        </div>
-        <div class="lg:w-1/2 p-6 border rounded-lg shadow-lg bg-white">
-          <div class="text-center">
-            <h6 class="text-xl font-semibold mb-0">Diskon</h6>
-            <div class="flex items-center justify-center text-2xl font-semibold mt-4">
-              <span class="line-through text-gray-500 mx-2">Rp 1.500.000</span>
-              <span class="text-red-500 mx-2">50%</span>
-            </div>
-            <p class="text-3xl font-bold my-2 text-orange-600">Rp 750.000</p>
-            <ul class="text-left mt-6 space-y-2 text-gray-700">
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                  <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
-                </svg>
-                Berkualitas
-              </li>
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                  <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
-                </svg>
-                Bonus: Accessories
-              </li>
-              <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                  <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
-                </svg>
-                Collabs Handphone
-              </li>
-            </ul>
-            <a href="#" class="mt-6 inline-block px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg">Beli Sekarang</a>
-          </div>
-        </div>
-      </div>
+      @endforeach
+    </div>
+
+
+
+    <!-- Tombol Beli Sekarang -->
+    <div class="mt-8 text-center">
+      <a href="#" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-xl">Beli Sekarang</a>
     </div>
   </div>
+</div>
+
   <!-- END PRICE -->
 
   <!-- FAQ -->
-  <div id="faq" class="space-y-8 py-8">
-    <div class="container mx-auto">
-      <div class="text-center max-w-3xl mx-auto mb-8">
-        <h1 class="text-3xl font-bold">Pertanyaan yang Sering Diajukan</h1>
+<div id="faq" class="space-y-12 py-12 bg-gray-100">
+  <div class="container mx-auto">
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h1 class="text-4xl font-extrabold text-gray-800">Pertanyaan yang Sering Diajukan</h1>
+      <p class="text-lg text-gray-600 mt-2">Temukan jawaban atas pertanyaan umum tentang layanan dan produk kami.</p>
+    </div>
+    <!-- FAQ Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-6">
+      <!-- Question 1 -->
+      <div class="bg-white p-8 shadow-lg rounded-lg">
+        <h4 class="text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-question-circle text-blue-500 mr-2"></i>
+          Apakah ada garansi untuk jam tangan yang dibeli di website ini?
+        </h4>
+        <p class="text-gray-600">
+          Semua jam tangan yang dibeli di website kami dilengkapi dengan garansi resmi dari pabrik. Periode garansi
+          berbeda-beda, mulai dari 1 hingga 5 tahun. Detailnya dapat Anda lihat di halaman produk masing-masing.
+        </p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 px-4">
-        <div class="bg-white p-6 shadow-md rounded-lg">
-          <h4 class="text-lg font-semibold mb-2">
-            Apakah ada garansi untuk jam tangan yang dibeli di website ini?
-          </h4>
-          <p class="text-gray-600">
-            Semua jam tangan yang dibeli di website kami dilengkapi dengan garansi resmi dari pabrik. Setiap merek memiliki
-            periode garansi yang berbeda, biasanya mulai dari 1 hingga 5 tahun. Detail garansi tercantum di halaman produk
-            masing-masing.
-          </p>
-        </div>
-        <div class="bg-white p-6 shadow-md rounded-lg">
-          <h4 class="text-lg font-semibold mb-2">
-            Apa yang membuat website jam tangan ini berbeda dari yang lain?
-          </h4>
-          <p class="text-gray-600">
-            Website kami menyediakan koleksi jam tangan berkualitas dari berbagai merek terkenal, dilengkapi dengan deskripsi
-            detail, fitur perbandingan produk, dan ulasan pelanggan untuk membantu Anda membuat keputusan yang tepat. Selain
-            itu, desain antarmuka yang responsif dan kemudahan navigasi membuat pengalaman belanja Anda lebih nyaman, bahkan di
-            perangkat seluler.
-          </p>
-        </div>
-        <div class="bg-white p-6 shadow-md rounded-lg">
-          <h4 class="text-lg font-semibold mb-2">
-            Apakah website ini menyediakan opsi pembayaran cicilan?
-          </h4>
-          <p class="text-gray-600">
-            Tidak, saat ini kami belum menyediakan opsi pembayaran cicilan. Namun, Anda dapat membayar secara penuh menggunakan
-            berbagai metode pembayaran yang kami sediakan, seperti kartu kredit, transfer bank, dan pembayaran digital.
-          </p>
-        </div>
-        <div class="bg-white p-6 shadow-md rounded-lg">
-          <h4 class="text-lg font-semibold mb-2">
-            Apakah tersedia layanan purna jual seperti perawatan atau perbaikan?
-          </h4>
-          <p class="text-gray-600">
-            Tidak, kami saat ini tidak menyediakan layanan purna jual seperti perawatan atau perbaikan. Kami sarankan Anda
-            membeli alat servis sendiri.
-          </p>
-        </div>
+      <!-- Question 2 -->
+      <div class="bg-white p-8 shadow-lg rounded-lg">
+        <h4 class="text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-star text-yellow-500 mr-2"></i>
+          Apa yang membuat website jam tangan ini berbeda dari yang lain?
+        </h4>
+        <p class="text-gray-600">
+          Website kami menawarkan koleksi eksklusif dari merek terkenal, dilengkapi fitur seperti deskripsi detail, 
+          perbandingan produk, dan ulasan pelanggan. Dengan desain yang responsif, Anda dapat berbelanja dengan nyaman di perangkat apa pun.
+        </p>
+      </div>
+      <!-- Question 3 -->
+      <div class="bg-white p-8 shadow-lg rounded-lg">
+        <h4 class="text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-wallet text-green-500 mr-2"></i>
+          Apakah website ini menyediakan opsi pembayaran cicilan?
+        </h4>
+        <p class="text-gray-600">
+          Tidak, saat ini kami belum menyediakan opsi pembayaran cicilan. Namun, Anda dapat membayar secara penuh 
+          menggunakan metode seperti kartu kredit, transfer bank, atau pembayaran digital lainnya.
+        </p>
+      </div>
+      <!-- Question 4 -->
+      <div class="bg-white p-8 shadow-lg rounded-lg">
+        <h4 class="text-xl font-semibold text-gray-800 mb-4">
+          <i class="fas fa-tools text-red-500 mr-2"></i>
+          Apakah tersedia layanan purna jual seperti perawatan atau perbaikan?
+        </h4>
+        <p class="text-gray-600">
+          Kami tidak menyediakan layanan purna jual seperti perawatan atau perbaikan. Namun, kami merekomendasikan 
+          Anda untuk membeli alat servis resmi yang tersedia di toko terpercaya.
+        </p>
       </div>
     </div>
   </div>
-  <!-- END FAQ -->
+</div>
+<!-- END FAQ -->
 
-  <!-- CONTACT US -->
-  <div id="contact-us" class="py-8 border-t border-b">
-    <div class="container mx-auto">
-      <div class="flex flex-col lg:flex-row h-full">
-        <!-- Contact Info -->
-        <div class="lg:w-1/2 h-full p-6">
-          <div class="mb-6">
-            <h5 class="text-2xl font-bold mb-3">Gimanasih cara dapetin nyaa🤑??</h5>
-            <p class="text-gray-600 mb-5">Kalian cukup menghubungi nomor ataupun Media sosial kamii❤️</p>
-          </div>
-          <div class="mb-6">
-            <h6 class="text-lg font-semibold mb-3">COLLABORATE</h6>
-            <p>
-              <a href="mailto:fravvalensi@gmail.com" class="text-blue-600 hover:underline">
-                fravvalensi@gmail.com
-              </a>
-            </p>
-          </div>
-          <div class="mb-6">
-            <h6 class="text-lg font-semibold mb-3">MESSAGE US</h6>
-            <p>
-              <a href="https://wa.me/+6282226739446" class="text-blue-600 hover:underline flex items-center" target="_blank">
-                <i class="fab fa-whatsapp mr-2"></i><span>Chat with us on WhatsApp</span>
-              </a>
-            </p>
+
+ <!-- CONTACT US -->
+<div id="contact-us" class="py-12 bg-gray-100 border-t">
+  <div class="container mx-auto">
+    <div class="flex flex-col lg:flex-row items-center h-full">
+      <!-- Contact Info -->
+      <div class="lg:w-1/2 h-full p-6">
+        <div class="mb-8">
+          <h2 class="text-3xl font-extrabold text-gray-800 mb-4">
+            Gimana sih caranya dapetin produk kami? 🤑
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Mudah banget! Hubungi kami melalui email atau media sosial kami ❤️
+          </p>
+        </div>
+        <!-- Email -->
+        <div class="flex items-center mb-6">
+          <i class="fas fa-envelope text-blue-500 text-2xl mr-4"></i>
+          <div>
+            <h6 class="text-lg font-semibold text-gray-800">Email</h6>
+            <a href="mailto:fravvalensi@gmail.com" class="text-blue-600 hover:underline">
+              fravvalensi@gmail.com
+            </a>
           </div>
         </div>
-
-        <!-- Contact Form -->
-        <div class="lg:w-1/2 h-full p-6">
-          <form onsubmit="submitContactForm(event)" class="text-center">
-            <div class="mb-5">
-              <h6 class="text-xl font-semibold mb-3">Hubungi Kami</h6>
-              <p class="text-gray-600">Berikan kritik dan saran mengenai produk kami</p>
-            </div>
-            <input type="text" class="w-full p-3 mb-4 border border-gray-300 rounded" placeholder="Full Name" required />
-            <input type="email" id="email" class="w-full p-3 mb-4 border border-gray-300 rounded" placeholder="Email" required />
-            <textarea class="w-full p-3 mb-4 border border-gray-300 rounded" placeholder="Message" required></textarea>
-            <button type="submit" class="w-full p-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700">
-              SEND MESSAGE
-            </button>
-          </form>
+        <!-- WhatsApp -->
+        <div class="flex items-center">
+          <i class="fab fa-whatsapp text-green-500 text-2xl mr-4"></i>
+          <div>
+            <h6 class="text-lg font-semibold text-gray-800">WhatsApp</h6>
+            <a href="https://wa.me/+6282226739446" class="text-blue-600 hover:underline" target="_blank">
+              +62 822 2673 9446
+            </a>
+          </div>
         </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:w-1/2 h-full p-6 bg-white shadow-lg rounded-lg">
+        <form onsubmit="submitContactForm(event)" class="space-y-6">
+          <div>
+            <h6 class="text-2xl font-bold text-gray-800 mb-2">Hubungi Kami</h6>
+            <p class="text-gray-600">
+              Berikan kritik dan saran Anda untuk membantu kami menjadi lebih baik!
+            </p>
+          </div>
+          <input
+            type="text"
+            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Email"
+            required
+          />
+          <textarea
+            class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300"
+          >
+            SEND MESSAGE
+          </button>
+        </form>
       </div>
     </div>
   </div>
-  <!-- END CONTACT US -->
+</div>
+<!-- END CONTACT US -->
 
   <!-- FOOTER -->
-  <footer>
-    <div class="bg-gray-100 py-8">
-      <div class="container mx-auto text-center mb-5">
-        <h1 class="text-2xl font-bold mb-3">
-          Beli sekarang dan dapatkan diskon 50%
-        </h1>
-        <p class="text-gray-600 mb-0">
-          semakin cepat semakin murah boskuyyy🤩
-        </p>
-        <div class="mt-4">
-          <a href="#" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-            Buy Now
+<footer class="bg-gray-900 text-gray-100">
+  <!-- Promo Section -->
+  <div class="py-12">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-extrabold mb-4">
+        Beli Sekarang dan Dapatkan Diskon 50%!
+      </h1>
+      <p class="text-lg text-gray-300">
+        Semakin cepat Anda membeli, semakin hemat! Jangan sampai ketinggalan 🤩
+      </p>
+      <div class="mt-6">
+        <a href="#" class="bg-blue-600 text-white py-3 px-6 text-lg font-semibold rounded-lg shadow hover:bg-blue-700">
+          Buy Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation and Links -->
+  <div class="bg-gray-800 py-8">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row justify-between items-center">
+        <!-- Navigation Links -->
+        <ul class="flex flex-wrap justify-center lg:justify-start space-x-6 mb-4 lg:mb-0">
+          <li>
+            <a href="#product" class="text-gray-300 hover:text-white hover:underline">Produk</a>
+          </li>
+          <li>
+            <a href="#features" class="text-gray-300 hover:text-white hover:underline">Fitur</a>
+          </li>
+          <li>
+            <a href="#testimonials" class="text-gray-300 hover:text-white hover:underline">Tentang Kami</a>
+          </li>
+          <li>
+            <a href="#pricing" class="text-gray-300 hover:text-white hover:underline">Harga</a>
+          </li>
+        </ul>
+        <!-- Social Media -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-300 hover:text-white text-2xl">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white text-2xl">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white text-2xl">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white text-2xl">
+            <i class="fab fa-linkedin"></i>
           </a>
         </div>
       </div>
     </div>
-    <div class="py-5">
-      <div class="container mx-auto">
-        <div class="flex justify-center items-center">
-          <ul class="flex space-x-4 list-none mb-0">
-            <li>
-              <a href="#product" class="text-blue-600 hover:underline">Produk</a>
-            </li>
-            <li>
-              <a href="#features" class="text-blue-600 hover:underline">Fitur</a>
-            </li>
-            <li>
-              <a href="#testimonials" class="text-blue-600 hover:underline">Tentang Kami</a>
-            </li>
-            <li>
-              <a href="#pricing" class="text-blue-600 hover:underline">Harga</a>
-            </li>
-          </ul>
-        </div>
-        <div class="text-center mt-4">
-          <p class="text-gray-600">
-            &copy; 2024 XYZ Watch. All Rights Reserved Team.
-          </p>
-        </div>
-      </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="py-6 bg-gray-700">
+    <div class="container mx-auto text-center">
+      <p class="text-sm text-gray-400">
+        &copy; 2024 XYZ Watch. All Rights Reserved Team.
+      </p>
     </div>
-  </footer>
-  <!-- END FOOTER -->
+  </div>
+</footer>
+<!-- END FOOTER -->
+
 
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </body>
